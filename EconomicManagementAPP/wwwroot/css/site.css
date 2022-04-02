@@ -50,5 +50,9 @@ body {
     width: 20px;
 }
 
+.leftHeader {
+    flex: 1 1 auto;
+}
+
 
 

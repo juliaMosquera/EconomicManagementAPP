@@ -22,7 +22,7 @@
 
                         @if(UsersController.valorSesion is not null)
                         {
-                          <span class="headerSpacer"></span>
+                          <span class="leftHeader"></span>
                           <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -41,13 +41,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Transactions" asp-action="Index">Transactions</a>
                         </li>
+                        <span class="leftHeader"></span>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogOut">Log Out</a>
                         </li>
                         }
                         else
                         {
-                            <span class="headerSpacer"></span>
+                            <span class="leftHeader"></span>
                               <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">Sign up</a>
                              </li>
