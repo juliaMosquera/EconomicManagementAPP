@@ -5,16 +5,19 @@
 
 <h1 class="text-center">Register Account Type</h1>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-<form asp-action="Create">
-    <div class="mb-3">
-        <label asp-for="Name" class="form-label"></label>
-        <input type="text" asp-for="Name" class="form-control" autocomplete="off" />
-        <span asp-validation-for="Name" class="text-danger"> </span>
+<div class="card">
+    <div class="formCreate">
+        <form asp-action="Create">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input type="text" asp-for="Name" class="form-control" autocomplete="off" />
+                <span asp-validation-for="Name" class="text-danger"> </span>
+            </div>
+            <button type="submit" class="btn btn-outline-success">Create</button>
+            <a class="btn btn-outline-danger" asp-action="Index">Cancel</a>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
-</form>
+</div>
 
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />

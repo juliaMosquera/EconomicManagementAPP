@@ -2,10 +2,14 @@
 @{
     ViewData["Title"] = "Accounts delete";
 }
-<h3 class="mb-3">¿Are you sure you want to delete the account type?: @Model.Name?</h3>
 
-<form asp-action="DeleteAccount">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
-</form>
+<div class="card">
+    <div class="formDelete">
+        <h3 class="mb-3">¿Are you sure you want to delete the account type?: @Model.Name?</h3>
+        <form asp-action="DeleteAccount">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+            <a class="btn btn-outline-secondary" asp-action="Index">Cancel</a>
+        </form>
+    </div>
+</div>
