@@ -81,5 +81,10 @@ namespace EconomicManagementAPP.Services
             return await connection.QueryFirstOrDefaultAsync<Users>(@"SELECT * FROM Users WHERE Email = @Email
                                                             AND Password = @Password", new { email, password });
         }
+
+        public bool Auth(ISession session)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

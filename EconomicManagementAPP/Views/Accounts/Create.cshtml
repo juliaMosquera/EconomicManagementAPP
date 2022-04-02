@@ -2,25 +2,21 @@
 @{
     ViewData["Title"] = "Accounts";
 }
-<h1>Register account</h1>
+<h1 class="text-center">Register Account</h1>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <form asp-action="Create">
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
-        <input type="text" asp-for="Name" class="form-control" />
+        <input type="text" asp-for="Name" class="form-control" autocomplete="off" />
         <span asp-validation-for="Name" class="text-danger"> </span>
 
-        <label asp-for="AccountTypeId" class="form-label"></label>
-        <input type="number" asp-for="AccountTypeId" class="form-control" />
-        <span asp-validation-for="AccountTypeId" class="text-danger"> </span>
-
         <label asp-for="Balance" class="form-label"></label>
-        <input asp-for="Balance" class="form-control" />
+        <input asp-for="Balance" class="form-control" autocomplete="off"/>
         <span asp-validation-for="Balance" class="text-danger"> </span>
 
         <label asp-for="Description" class="form-label"></label>
-        <input asp-for="Description" class="form-control" />
+        <input asp-for="Description" class="form-control" autocomplete="off" />
         <span asp-validation-for="Description" class="text-danger"> </span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>

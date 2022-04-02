@@ -4,7 +4,7 @@
 }
 
 
-<h1>Register categorie</h1>
+<h1 class="text-center">Register Categorie</h1>
 
 
 <form asp-action="Create">
@@ -12,7 +12,7 @@
 
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-control" />
+        <input asp-for="Name" class="form-control" autocomplete="off" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="mb-3">

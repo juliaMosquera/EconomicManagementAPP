@@ -3,13 +3,13 @@
     ViewData["Title"] = "Account types";
 }
 
-<h1>Register account type</h1>
+<h1 class="text-center">Register Account Type</h1>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 <form asp-action="Create">
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
-        <input type="text" asp-for="Name" class="form-control" />
+        <input type="text" asp-for="Name" class="form-control" autocomplete="off" />
         <span asp-validation-for="Name" class="text-danger"> </span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>

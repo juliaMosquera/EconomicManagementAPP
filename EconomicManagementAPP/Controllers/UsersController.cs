@@ -8,6 +8,8 @@ namespace EconomicManagementAPP.Controllers
 
         private readonly IRepositorieUsers repositorieUser;
 
+        internal static Users valorSesion;
+
         public UsersController(IRepositorieUsers repositorieUser)
         {
             this.repositorieUser = repositorieUser;
@@ -47,7 +49,8 @@ namespace EconomicManagementAPP.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "AccountTypes");
+                valorSesion = result;
+                return RedirectToAction("Index", "Home");
             }
         }
 
@@ -72,7 +75,7 @@ namespace EconomicManagementAPP.Controllers
                 return View(users);
             }
             await repositorieUser.Create(users);
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
 
         //Actualizar
@@ -128,6 +131,12 @@ namespace EconomicManagementAPP.Controllers
 
             await repositorieUser.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult LogOut()
+        {
+            valorSesion = null;
+            return RedirectToAction("Login");
         }
     }
 }

@@ -37,7 +37,7 @@ namespace EconomicManagementAPP.Controllers
             {
                 return View(categorie);
             }
-
+            categorie.UserId = UsersController.valorSesion.Id;
             var categorieExist = await repositorieCategories.Exist(categorie.Name);
             if (categorieExist)
             {

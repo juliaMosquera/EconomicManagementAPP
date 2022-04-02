@@ -13,6 +13,11 @@ namespace EconomicManagementAPP.Services
             connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
+        public int GetAccountTypeId()
+        {
+            return 1;
+        }
+
         public async Task Create(AccountTypes accountTypes)
         {
             using var connection = new SqlConnection(connectionString);
@@ -37,7 +42,7 @@ namespace EconomicManagementAPP.Services
         }
 
         // Obtenemos las cuentas del usuario
-        public async Task<IEnumerable<AccountTypes>> getAccounts(int UserId)
+        public async Task<IEnumerable<AccountTypes>> GetAccountsTypes(int UserId)
         {
             using var connection = new SqlConnection(connectionString);
             return await connection.QueryAsync<AccountTypes>(@"SELECT Id, Name, OrderAccount
@@ -45,6 +50,15 @@ namespace EconomicManagementAPP.Services
                                                             WHERE UserId = @UserId
                                                             ORDER BY OrderAccount", new { UserId });
         }
+
+        //public async Task<IEnumerable<AccountTypes>> GetAccountTypes(int UserId)
+        //{
+        //    using var connection = new SqlConnection(connectionString);
+        //    return await connection.QueryAsync<AccountTypes>(@"SELECT [at].Id ,[at].[Name] AS 'Name' , UserId, OrderAccount
+         //                                                    FROM AccountTypes AS [at]
+         //                                                    JOIN User AS u
+         //                                                    ON u.Id=[at].UserId AND [at].DbStatus=1 AND u.DbStatus=1", new {UserId});
+       // }
 
         // Actualizar
         public async Task Modify(AccountTypes accountTypes)
@@ -56,7 +70,7 @@ namespace EconomicManagementAPP.Services
         }
 
         //Para actualizar se necesita obtener el tipo de cuenta por el id
-        public async Task<AccountTypes> getAccountById(int id, int userId)
+        public async Task<AccountTypes> GetAccountById(int id, int userId)
         {
             using var connection = new SqlConnection(connectionString);
             return await connection.QueryFirstOrDefaultAsync<AccountTypes>(@"
@@ -72,5 +86,10 @@ namespace EconomicManagementAPP.Services
             using var connection = new SqlConnection(connectionString);
             await connection.ExecuteAsync("DELETE AccountTypes WHERE Id = @Id", new { id });
         }
+
+        //public Task<int> GetNumberAccount(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

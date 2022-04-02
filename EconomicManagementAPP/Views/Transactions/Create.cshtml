@@ -4,7 +4,7 @@
 }
 
 
-<h1>Register Transaction</h1>
+<h1 class="text-center">Register Transaction</h1>
 <h5>A transaction allows you to indicate your income and expenses</h5>
 
 <form asp-action="Create">
@@ -50,28 +50,15 @@
 </form>
 
 
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/TransactionsForm.js" sdp-append-version="true"></script>
+
     <script>
-
       const urlGetCategories = '@Url.Action("GetCategories")';
-
       $(function() {
-          $("#OperationTypesId").change(async function(){
-              const selectedValue = $(this).val();
-
-              const response = await fetch(urlGetCategories, {
-                method: 'POST',
-                body: selectedValue,
-                headers: {
-                  'Content-Type': 'application/json'
-                }
-              });
-              const json = await response.json();
-
-          const options = json.map(category => `<option value=${category.value}>${category.text}</option>`);
-          $("#CategoryId").html(options);
+        initializeTransactionsForm(urlGetCategories);
         })
-    })
     </script>
 }

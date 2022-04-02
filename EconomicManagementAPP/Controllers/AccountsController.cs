@@ -21,6 +21,7 @@ namespace EconomicManagementAPP.Controllers
 
         public async Task<ActionResult> Index()
         {
+            
             var accounts = await repositorieAccounts.GetAccounts();
             return View(accounts);
         }
@@ -28,8 +29,8 @@ namespace EconomicManagementAPP.Controllers
         [HttpGet]
         public async Task<ActionResult> Create()
         {
-            // var userId = repositorieUsers.GetUserId();
-            // var accountType = await repositorieAccountTypes.
+            //var UserId = repositorieUsers.GetUserId();
+            //var accountTypes = await repositorieAccountTypes.getAccounts(UserId);
             return View();
         }
 
@@ -40,6 +41,9 @@ namespace EconomicManagementAPP.Controllers
             {
                 return View(accounts);
             }
+
+            accounts.AccountTypeId = 1;
+
             var accountsExist =
                await repositorieAccounts.Exist(accounts.Name, accounts.AccountTypeId);
             if (accountsExist)
@@ -54,13 +58,16 @@ namespace EconomicManagementAPP.Controllers
 
         public async Task<ActionResult> Modify(int Id)
         {
+
             var userId = repositorieUsers.GetUserId();
+            //var accountTypeId = repositorie);
             var account = await repositorieAccounts.GetAccountById(Id, userId);
             if (account is null)
             {
                 return RedirectToAction("NotFound", "Home");
             }
             return View(account);
+
         }
 
         [HttpPost]

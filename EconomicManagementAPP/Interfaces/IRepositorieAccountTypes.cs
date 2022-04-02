@@ -7,11 +7,13 @@ public interface IRepositorieAccountTypes
 
     Task<bool> Exist(string Name, int UserId);
 
-    Task<IEnumerable<AccountTypes>> getAccounts(int UserId);
+    Task<IEnumerable<AccountTypes>> GetAccountsTypes(int UserId = 1);
 
     Task Modify(AccountTypes accountTypes);
 
-    Task<AccountTypes> getAccountById(int id, int userId); // para el modify
+    Task<AccountTypes> GetAccountById(int id, int userId = 1); // para el modify
+
+    //Task<int> GetNumberAccount(int id);
 
     Task Delete(int id);
 }

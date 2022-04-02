@@ -18,7 +18,7 @@ namespace EconomicManagementAPP.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = repositorieUsers.GetUserId();
-            var accountTypes = await repositorieAccountTypes.getAccounts(userId);
+            var accountTypes = await repositorieAccountTypes.GetAccountsTypes(userId);
             return View(accountTypes);
         }
 
@@ -78,7 +78,9 @@ namespace EconomicManagementAPP.Controllers
         public async Task<ActionResult> Modify(int id)
         {
             var userId = repositorieUsers.GetUserId();
-            var accountType = await repositorieAccountTypes.getAccountById(id, userId);
+            //var accountTypeId = repositorieAccountTypes.getAccountTypeId();
+
+            var accountType = await repositorieAccountTypes.GetAccountById(id, userId);
 
             if (accountType is null)
             {
@@ -91,7 +93,7 @@ namespace EconomicManagementAPP.Controllers
         public async Task<ActionResult> Modify(AccountTypes accountTypes)
         {
             var userId = repositorieUsers.GetUserId();
-            var accountType = await repositorieAccountTypes.getAccountById(accountTypes.Id, userId);
+            var accountType = await repositorieAccountTypes.GetAccountById(accountTypes.Id, userId);
 
             if (accountType is null)
             {
@@ -106,7 +108,7 @@ namespace EconomicManagementAPP.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var userId = repositorieUsers.GetUserId();
-            var account = await repositorieAccountTypes.getAccountById(id, userId);
+            var account = await repositorieAccountTypes.GetAccountById(id, userId);
 
             if (account is null)
             {
@@ -119,7 +121,7 @@ namespace EconomicManagementAPP.Controllers
         public async Task<IActionResult> DeleteAccount(int id)
         {
             var userId = repositorieUsers.GetUserId();
-            var account = await repositorieAccountTypes.getAccountById(id, userId);
+            var account = await repositorieAccountTypes.GetAccountById(id, userId);
 
             if (account is null)
             {

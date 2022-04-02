@@ -6,10 +6,13 @@ namespace EconomicManagementAPP.Repositories
     {
         Task Create(Transactions transactions);
 
-        Task ModifyTransaction(Transactions transactions);
+        Task ModifyTransaction(Transactions transactions,
+                               decimal previousAmount,
+                               int previousAccount);
+        Task Delete(int id);
 
-        Task Delete(int Id);
+        Task<Transactions> GetTransactionById(int id, int userId);
 
-        Task<Transactions> GetTransactionById(int Id, int UserId);
+        Task<IEnumerable<Transactions>> GetTransactionsByUser(int userId);
     }
 }

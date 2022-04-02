@@ -19,4 +19,6 @@ public interface IRepositorieUsers
 
     int GetUserId();
 
+    bool Auth(ISession session);
+
 }

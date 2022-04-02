@@ -4,12 +4,12 @@
     ViewData["Title"] = "Categories";
 }
 
-<h1>Categories</h1>
-<h5>Categories help us see what we spend our money on, also where our income comes from.</h5>
-<a asp-action="Create" class="btn btn-primary mb-3">Create category</a>
+<h1 class="text-center">Categories</h1>
+
+<a asp-action="Create" class="btn btn-success mb-3">Create category</a>
 
 @if(Model.Any()){
-<table class="table">
+<table class="table table-primary">
     <thead>
         <tr>
             <th>Actions</th>
@@ -22,8 +22,8 @@
         {
             <tr>
                 <td>
-                    <a class="btn btn-primary" asp-action="Modify" asp-route-id="@category.Id">Modify</a>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@category.Id">Delete</a>
+                    <a class="sizeFooter" asp-action="Modify" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>
+                    <a class="sizeFooter" asp-action="Delete" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6805/6805398.png" /></a>
                 </td>
                 <td>
                     @category.Name

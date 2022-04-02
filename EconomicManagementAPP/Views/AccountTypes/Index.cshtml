@@ -4,12 +4,12 @@
     ViewData["Title"] = "Account Types";
 }
 
-<h1>Account Types List</h1>
+<h1 class="text-center">List of Account Types</h1>
 
-<a asp-action="Create" class="btn btn-primary mb-3">Create account</a>
+<a asp-action="Create" class="btn btn-success mb-3">Crear Account Types</a>
 
 @if(Model.Any()){
-<table class="table">
+<table class="table table-primary">
     <thead>
         <tr>
             <th>Actions</th>
@@ -22,8 +22,8 @@
             <tr>
                 <td>
                     <input type="hidden" value="@accountTypes.Id" class="ids" />
-                    <a class="btn btn-primary" asp-action="Modify" asp-route-id="@accountTypes.Id">Modify</a>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@accountTypes.Id">Delete</a>
+                    <a class="sizeFooter" asp-action="Modify" asp-route-id="@accountTypes.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>
+                    <a class="sizeFooter" asp-action="Delete" asp-route-id="@accountTypes.Id"><img src="https://cdn-icons-png.flaticon.com/128/6805/6805398.png" /></a>
                 </td>
                 <td>
                     @accountTypes.Name

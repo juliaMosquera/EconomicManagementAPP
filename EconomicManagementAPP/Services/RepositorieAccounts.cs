@@ -60,7 +60,7 @@ namespace EconomicManagementAPP.Services
         {
             using var connection = new SqlConnection(connectionString);
             await connection.ExecuteAsync(@"UPDATE Accounts
-                        SET Name = @Name, AccountTypeId=@AccountTypeId, Balance=@Balance, Description=@Description
+                        SET Name = @Name, Balance=@Balance, Description=@Description
                         WHERE Id = @Id;", accounts);
         }
 
