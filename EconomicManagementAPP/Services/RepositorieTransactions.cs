@@ -32,8 +32,6 @@ namespace EconomicManagementAPP.Services
             transactions.Id = id;
         }
 
-
-
         public async Task<Transactions> GetTransactionById(int id, int userId)
         {
             using var connection = new SqlConnection(connectionString);

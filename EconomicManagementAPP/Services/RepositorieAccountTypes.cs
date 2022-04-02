@@ -51,15 +51,6 @@ namespace EconomicManagementAPP.Services
                                                             ORDER BY OrderAccount", new { UserId });
         }
 
-        //public async Task<IEnumerable<AccountTypes>> GetAccountTypes(int UserId)
-        //{
-        //    using var connection = new SqlConnection(connectionString);
-        //    return await connection.QueryAsync<AccountTypes>(@"SELECT [at].Id ,[at].[Name] AS 'Name' , UserId, OrderAccount
-         //                                                    FROM AccountTypes AS [at]
-         //                                                    JOIN User AS u
-         //                                                    ON u.Id=[at].UserId AND [at].DbStatus=1 AND u.DbStatus=1", new {UserId});
-       // }
-
         // Actualizar
         public async Task Modify(AccountTypes accountTypes)
         {
@@ -86,10 +77,5 @@ namespace EconomicManagementAPP.Services
             using var connection = new SqlConnection(connectionString);
             await connection.ExecuteAsync("DELETE AccountTypes WHERE Id = @Id", new { id });
         }
-
-        //public Task<int> GetNumberAccount(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

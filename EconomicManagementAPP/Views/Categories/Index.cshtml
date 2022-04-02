@@ -3,40 +3,41 @@
 @{
     ViewData["Title"] = "Categories";
 }
-
 <h1 class="text-center">Categories</h1>
 
 <a asp-action="Create" class="btn btn-success mb-3">Create category</a>
 
-@if(Model.Any()){
-<table class="table">
-    <thead>
-        <tr>
-            <th>Actions</th>
-            <th>Name</th>
-            <th>Operation Type</th>
-        </tr>
-    </thead>
-    <tbody id="reordenable">
-        @foreach (var category in Model)
-        {
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    <a class="sizeFooter" asp-action="Modify" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>
-                    <a class="sizeFooter" asp-action="Delete" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6805/6805398.png" /></a>
-                </td>
-                <td>
-                    @category.Name
-                </td>
-                <td>
-                    @category.OperationTypeId.ToString()
-                </td>
+                <th>Actions</th>
+                <th>Name</th>
+                <th>Operation Type</th>
             </tr>
-        }
-    </tbody>
+        </thead>
+        <tbody id="reordenable">
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="sizeFooter" asp-action="Modify" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>
+                        <a class="sizeFooter" asp-action="Delete" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6805/6805398.png" /></a>
+                    </td>
+                    <td>
+                        @category.Name
+                    </td>
+                    <td>
+                        @category.OperationTypeId.ToString()
+                    </td>
+                </tr>
+            }
+        </tbody>
 
-</table>
-}@if(!Model.Any()){
+    </table>
+}@if (!Model.Any())
+{
     <h1>
         No results
     </h1>

@@ -4,7 +4,6 @@ using Microsoft.Data.SqlClient;
 
 namespace EconomicManagementAPP.Services
 {
-
     public class RepositorieCategories : IRepositorieCategories
     {
         private readonly string connectionString;
@@ -13,7 +12,6 @@ namespace EconomicManagementAPP.Services
         {
             connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-
 
         public async Task Create(Categories categories)
         {
@@ -41,7 +39,6 @@ namespace EconomicManagementAPP.Services
                                                                       new { Name });
             return exist == 1;
         }
-
 
         public async Task<Categories> GetCategorieById(int id, int userId)
         {

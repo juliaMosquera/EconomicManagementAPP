@@ -9,6 +9,5 @@ namespace EconomicManagementAPP.Services
         {
             CreateMap<ModifyTransactionViewModel, Transactions>().ReverseMap();
         }
-
     }
 }

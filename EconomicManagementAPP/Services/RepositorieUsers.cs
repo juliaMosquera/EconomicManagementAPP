@@ -4,7 +4,6 @@ using Microsoft.Data.SqlClient;
 
 namespace EconomicManagementAPP.Services
 {
-
     public class RepositorieUser : IRepositorieUsers
     {
         private readonly string connectionString;
@@ -41,8 +40,6 @@ namespace EconomicManagementAPP.Services
                                                                       new { Email });
             return exist == 1;
         }
-
-
 
         public async Task<Users> getAccountById(int id)
         {

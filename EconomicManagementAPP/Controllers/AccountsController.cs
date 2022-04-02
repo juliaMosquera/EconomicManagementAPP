@@ -29,8 +29,6 @@ namespace EconomicManagementAPP.Controllers
         [HttpGet]
         public async Task<ActionResult> Create()
         {
-            //var UserId = repositorieUsers.GetUserId();
-            //var accountTypes = await repositorieAccountTypes.getAccounts(UserId);
             return View();
         }
 
@@ -60,7 +58,7 @@ namespace EconomicManagementAPP.Controllers
         {
 
             var userId = repositorieUsers.GetUserId();
-            //var accountTypeId = repositorie);
+
             var account = await repositorieAccounts.GetAccountById(Id, userId);
             if (account is null)
             {
