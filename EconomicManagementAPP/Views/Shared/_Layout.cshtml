@@ -17,7 +17,7 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between headerColor headerSize ">
                     <ul class="navbar-nav flex-grow-1">
 
                         @if (UsersController.valorSesion is not null)
@@ -50,10 +50,10 @@
                         {
                             <span class="leftHeader"></span>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Create">Sign up</a>
+                                <a class="btn btn-outline-success text-dark" asp-area="" asp-controller="Users" asp-action="Create">Sign up</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                                <a class="btn btn-outline-primary text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
                             </li>
                         }
 
@@ -68,7 +68,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-black footerSize">
+    <footer class="border-top footer text-black footerSize headerColor">
         <span class="leftHeader"></span>
         <div class="sizeFooter">
             <img src="https://cdn-icons-png.flaticon.com/128/733/733547.png" />

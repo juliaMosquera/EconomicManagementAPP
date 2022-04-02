@@ -31,9 +31,18 @@ body {
     width: 40px;
 }
 
+.headerSize {
+    display: flex;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center
+}
+
 .footerSize {
     display: flex;
-    height: 80px;
+    height: 60px;
+    width: 60px;
     justify-content: center;
     align-items: center
 }
@@ -75,6 +84,11 @@ body {
     padding-bottom: 80px;
     padding-left: 80px;
     padding-right: 80px;
+    background-color: aliceblue;
+}
+
+.color{
+    background-color: aliceblue;
 }
 
 .formModify {
@@ -97,4 +111,8 @@ body {
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.headerColor {
+    background-color: darkcyan;
 }
