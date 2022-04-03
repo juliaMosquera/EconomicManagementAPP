@@ -5,7 +5,7 @@
 }
 <h1 class="text-center">Categories</h1>
 
-<a asp-action="Create" class="btn btn-outline-success mb-3">Create category</a>
+<a asp-action="Create" class="btn btn-success mb-3">Create category</a>
 
 @if (Model.Any())
 {
@@ -20,7 +20,7 @@
         <tbody id="reordenable">
             @foreach (var category in Model)
             {
-                <tr>
+                <tr class="table-light">
                     <td>
                         <a class="sizeFooter" asp-action="Modify" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>
                         <a class="sizeFooter" asp-action="Delete" asp-route-id="@category.Id"><img src="https://cdn-icons-png.flaticon.com/128/6805/6805398.png" /></a>

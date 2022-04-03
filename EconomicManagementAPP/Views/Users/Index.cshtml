@@ -18,7 +18,7 @@
         <tbody id="reordenable">
             @foreach (var users in Model)
             {
-                <tr>
+                <tr class="table-light">
                     <td>
                         <input type="hidden" value="@users.Id" class="ids" />
                         <a class="sizeFooter" asp-action="Modify" asp-route-id="@users.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>

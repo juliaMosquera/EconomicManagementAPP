@@ -3,7 +3,7 @@
     ViewData["Title"] = "Accounts";
 }
 <h1 class="text-center">Accounts</h1>
-<a asp-action="Create" class="btn btn-outline-success mb-3">Create account</a>
+<a asp-action="Create" class="btn btn-success mb-3">Create account</a>
 
 @if (Model.Any())
 {
@@ -20,7 +20,7 @@
         <tbody id="reordenable">
             @foreach (var accounts in Model)
             {
-                <tr>
+                <tr class="table-light">
                     <td>
                         <input type="hidden" value="@accounts.Id" class="ids" />
                         <a class="sizeFooter" asp-action="Modify" asp-route-id="@accounts.Id"><img src="https://cdn-icons-png.flaticon.com/128/6323/6323478.png" /></a>

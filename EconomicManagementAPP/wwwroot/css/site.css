@@ -16,6 +16,7 @@ html {
 body {
     margin-bottom: 60px;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(https://img2.freepng.es/20180305/lee/kisspng-online-banking-money-drawing-bank-building-5a9d3b87dfff93.0438617315202538319175.jpg);
 }
 
 .content-center {
@@ -104,6 +105,7 @@ body {
     padding-bottom: 80px;
     padding-left: 80px;
     padding-right: 80px;
+    background-color: aliceblue;
 }
 
 .formDelete {
@@ -115,6 +117,7 @@ body {
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
+    background-color: aliceblue;
 }
 
 .headerColor {
@@ -132,3 +135,5 @@ body {
     width: 60px;
     height: 60px;
 }
+
+
