@@ -116,3 +116,15 @@ body {
 .headerColor {
     background-color: darkcyan;
 }
+
+.size{
+    display:flex;
+    width: 50px;
+    height: 50px;
+}
+
+.sizeLogueo {
+    display: flex;
+    width: 60px;
+    height: 60px;
+}
