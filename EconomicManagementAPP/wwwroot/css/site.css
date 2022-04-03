@@ -91,6 +91,10 @@ body {
     background-color: aliceblue;
 }
 
+.colorCard{
+    background-color: gray;
+}
+
 .formModify {
     width: 1000px;
     height: 20px auto;

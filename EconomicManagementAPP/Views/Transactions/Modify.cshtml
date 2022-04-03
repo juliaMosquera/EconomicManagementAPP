@@ -4,7 +4,7 @@
 }
 
 <h1 class="text-center">Modify Transaction</h1>
-<div class="card">
+<div class="card colorCard">
     <div class="formModify">
         <form asp-action="Modify">
             <div asp-validation-summary=ModelOnly class="text-danger"></div>
@@ -14,7 +14,7 @@
 
             <div class="mb-3">
                 <label asp-for="TransactionDate" class="form-label"></label>
-                <input asp-for="TransactionDate" class="form-control" />
+                <input asp-for="TransactionDate" class="form-control" autocomplete="off"/>
                 <span asp-validation-for="TransactionDate" class="text-danger"></span>
             </div>
 
@@ -38,7 +38,7 @@
 
             <div class="mb-3">
                 <label asp-for="Total" class="form-label"></label>
-                <input asp-for="Total" class="form-control" />
+                <input asp-for="Total" class="form-control" autocomplete="off"/>
                 <span asp-validation-for="Total" class="text-danger"></span>
             </div>
 

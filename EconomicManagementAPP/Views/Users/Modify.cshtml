@@ -6,19 +6,19 @@
 
 <h1 class="text-center">Modify user: @Model.Email</h1>
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<div class="card">
+<div class="card colorCard">
     <div class="formModify">
         <form asp-action="Modify">
             <input type="hidden" asp-for="Id" />
             <div class="mb-3">
                 <label asp-for="StandarEmail" class="form-label"></label>
-                <input type="text" asp-for="StandarEmail" class="form-control" />
+                <input type="text" asp-for="StandarEmail" class="form-control" autocomplete="off"/>
                 <span asp-validation-for="StandarEmail" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="Password" class="form-label"></label>
-                <input type="text" asp-for="Password" class="form-control" />
+                <input type="text" asp-for="Password" class="form-control" autocomplete="off"/>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
